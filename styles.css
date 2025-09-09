@@ -21,33 +21,34 @@ p { margin: 0.6rem 0; }
 a { color: #0366d6; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-/* Container with side padding */
+/* Container aligned left instead of centered */
 .container {
-  width: min(980px, 94%);
-  margin: 40px auto;
-  padding-left: 20px;
-  padding-right: 40px;
+  max-width: 980px;       /* limit width */
+  margin-left: 20px;      /* only left margin, not auto centering */
+  margin-right: 0;        /* hug right side more */
+  padding-left: 0;
+  padding-right: 30px;    /* still give some right breathing room */
 }
 
 /* Layout: photo on left, text on right */
 .about {
   display: grid;
-  grid-template-columns: 400px 1fr; /* bigger photo column */
-  gap: 40px;                        /* more space between photo & text */
+  grid-template-columns: 400px 1fr;
+  gap: 40px;
   align-items: start;
   padding-bottom: 60px;
 }
 
-/* Photo column margin (smaller left margin now) */
+/* Photo column margin */
 .about-left {
-  margin-left: 10px;  /* reduced from 20px */
+  margin-left: 0;   /* closer to edge */
   text-align: left;
 }
 
 /* Photo styling */
 .photo {
   width: 100%;
-  max-width: 400px;   /* enlarged photo */
+  max-width: 400px;
   height: auto;
   border-radius: 10px;
   box-shadow: 0 2px 16px rgba(0,0,0,.08);
@@ -79,14 +80,12 @@ a:hover { text-decoration: underline; }
     grid-template-columns: 1fr;
     gap: 22px;
   }
-  .about-left {
-    margin-left: 0;
-  }
   .photo {
-    max-width: 300px;  /* slightly smaller for phones */
+    max-width: 300px;
   }
   .about-right {
     padding-right: 0;
   }
 }
+
 
