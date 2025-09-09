@@ -21,27 +21,28 @@ p { margin: 0.6rem 0; }
 a { color: #0366d6; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-/* Container aligned left instead of centered */
+/* Container aligned left with minimal margin */
 .container {
-  max-width: 980px;       /* limit width */
-  margin-left: 20px;      /* only left margin, not auto centering */
-  margin-right: 0;        /* hug right side more */
+  max-width: 980px;      /* limit width */
+  margin-left: 10px;     /* small left margin */
+  margin-right: 0;       /* no centering */
+  margin-top: 40px;      /* <<< added top margin */
   padding-left: 0;
-  padding-right: 30px;    /* still give some right breathing room */
+  padding-right: 30px;   /* breathing room on right */
 }
 
 /* Layout: photo on left, text on right */
 .about {
   display: grid;
-  grid-template-columns: 400px 1fr;
+  grid-template-columns: 400px 1fr; /* bigger photo */
   gap: 40px;
   align-items: start;
   padding-bottom: 60px;
 }
 
-/* Photo column margin */
+/* Photo column */
 .about-left {
-  margin-left: 0;   /* closer to edge */
+  margin-left: 0;
   text-align: left;
 }
 
@@ -56,7 +57,7 @@ a:hover { text-decoration: underline; }
   margin-bottom: 12px;
 }
 
-/* Name and affiliation under photo */
+/* Name + affiliation under photo */
 .photo-caption .name {
   font-size: 1.3rem;
   font-weight: 600;
