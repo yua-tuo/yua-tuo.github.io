@@ -36,24 +36,25 @@ a  { color: var(--link); text-decoration: none; }
 a:hover { text-decoration: underline; }
 hr { border: 0; border-top: 1px solid var(--rule); margin: 24px 0; }
 
-/* ---------- Dark mode button (TOP RIGHT, neutral style) ---------- */
+/* ---------- Dark mode button (TOP RIGHT, larger & more noticeable) ---------- */
 #theme-toggle {
   position: fixed;
-  top: 18px;
-  right: 24px;
+  top: 20px;
+  right: 28px;
   z-index: 999;
   border: none;
   background: none;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 28px;      /* larger size (was 20px) */
   line-height: 1;
-  color: var(--muted);
-  padding: 6px;
-  transition: color 0.2s ease;
+  color: var(--muted);  /* neutral gray */
+  padding: 8px;
+  transition: color 0.2s ease, transform 0.15s ease;
 }
 
 #theme-toggle:hover {
   color: var(--text);
+  transform: scale(1.15); /* subtle zoom on hover */
 }
 
 /* ---------- Left-anchored container, wider main text ---------- */
@@ -69,8 +70,8 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 24px 0; }
 /* ---------- Two-column layout (photo + text) ---------- */
 .about {
   display: grid;
-  grid-template-columns: 440px 1fr;  /* larger photo column */
-  gap: 36px;                         /* balanced spacing */
+  grid-template-columns: 440px 1fr;  /* large photo column */
+  gap: 36px;
   align-items: start;
   padding-bottom: 60px;
 }
@@ -79,7 +80,7 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 24px 0; }
 .about-left { text-align: left; }
 .photo {
   width: 100%;
-  max-width: 440px;     /* enlarged photo */
+  max-width: 440px;
   height: auto;
   border-radius: 10px;
   box-shadow: var(--shadow);
