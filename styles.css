@@ -1,17 +1,91 @@
+/* Typography like academicpages */
+body {
+  margin: 0;
+  color: #24292e;
+  background: #ffffff;
+  font: 17px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  line-height: 1.25;
+  margin-top: 0;
+}
+h1 { font-size: 2rem; margin-bottom: 0.6rem; }
+h2 { font-size: 1.4rem; margin-top: 1.6rem; margin-bottom: 0.4rem; }
+h3 { font-size: 1.1rem; margin-top: 1.0rem; margin-bottom: 0.3rem; }
+
+p { margin: 0.6rem 0; }
+a { color: #0366d6; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Container with side padding */
+.container {
+  width: min(980px, 94%);
+  margin: 40px auto;
+  padding-left: 20px;
+  padding-right: 40px;
+}
+
+/* Layout: photo on left, text on right */
 .about {
   display: grid;
-  grid-template-columns: 240px 1fr;
-  gap: 28px;
-  align-items: start;   /* ensures both photo + text align at the top */
+  grid-template-columns: 360px 1fr;
+  gap: 36px;
+  align-items: start;
+  padding-bottom: 60px;
 }
 
-/* Push photo in slightly from the page edge */
+/* Photo column margin */
 .about-left {
-  margin-left: 20px;   /* adjust 20–40px to taste */
+  margin-left: 20px;
+  text-align: left; /* align caption with left edge of photo */
 }
 
+/* Photo styling */
 .photo {
   width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 2px 12px rgba(0,0,0,.1);
+  max-width: 360px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 16px rgba(0,0,0,.08);
+  display: block;
+  margin-bottom: 12px;
+}
+
+/* Name and affiliation under photo */
+.photo-caption .name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.photo-caption .dept,
+.photo-caption .school {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 2px 0;
+}
+
+/* Right text column spacing */
+.about-right {
+  padding-right: 20px;
+}
+
+/* Mobile: stack photo above text */
+@media (max-width: 768px) {
+  .about {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .about-left {
+    margin-left: 0;
+  }
+  .photo {
+    max-width: 280px;
+  }
+  .about-right {
+    padding-right: 0;
+  }
 }
