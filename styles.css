@@ -58,8 +58,8 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 24px 0; }
 
 /* ---------- Left-anchored container, wider main text ---------- */
 .container {
-  max-width: 1200px;    /* wide so main text area is large */
-  margin-left: 30px;
+  max-width: 1200px;    
+  margin-left: 30px;    
   margin-right: 0;
   margin-top: 40px;
   padding-left: 0;
@@ -69,8 +69,8 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 24px 0; }
 /* ---------- Two-column layout (photo + text) ---------- */
 .about {
   display: grid;
-  grid-template-columns: 380px 1fr;  /* larger photo column */
-  gap: 34px;                         /* balanced spacing */
+  grid-template-columns: 440px 1fr;  /* larger photo column */
+  gap: 36px;                         /* balanced spacing */
   align-items: start;
   padding-bottom: 60px;
 }
@@ -79,16 +79,16 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 24px 0; }
 .about-left { text-align: left; }
 .photo {
   width: 100%;
-  max-width: 380px;     /* larger than before (was 340px) */
+  max-width: 440px;     /* enlarged photo */
   height: auto;
   border-radius: 10px;
   box-shadow: var(--shadow);
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
-.photo-caption .name   { font-size: 1.25rem; font-weight: 600; margin-bottom: 2px; }
+.photo-caption .name   { font-size: 1.35rem; font-weight: 600; margin-bottom: 4px; }
 .photo-caption .dept,
-.photo-caption .school { font-size: 0.98rem; color: var(--muted); margin: 2px 0; }
+.photo-caption .school { font-size: 1.05rem; color: var(--muted); margin: 2px 0; }
 
 /* Right column: text */
 .about-right { padding-right: 6px; }
@@ -105,8 +105,7 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 24px 0; }
 @media (max-width: 900px) {
   .container { margin-left: 20px; padding-right: 10px; }
   .about { grid-template-columns: 1fr; gap: 22px; }
-  .photo { max-width: 320px; }
+  .photo { max-width: 340px; }
   .about-right { padding-right: 0; }
 }
-
 
