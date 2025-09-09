@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- Dark mode toggle (top-right) -->
+  <button id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+
   <main class="container">
     <section class="about">
       <div class="about-left">
@@ -65,8 +68,32 @@
       </div>
     </section>
   </main>
+
+  <script>
+    // Dark mode toggle with persistence
+    (function () {
+      const key = 'site-theme';
+      const btn = document.getElementById('theme-toggle');
+      const saved = localStorage.getItem(key);
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const initial = saved ? saved : (prefersDark ? 'dark' : 'light');
+      setTheme(initial);
+
+      btn.addEventListener('click', () => {
+        const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+        setTheme(next);
+        localStorage.setItem(key, next);
+      });
+
+      function setTheme(mode) {
+        document.documentElement.dataset.theme = mode;
+        btn.textContent = mode === 'dark' ? '☀️' : '🌙';
+      }
+    })();
+  </script>
 </body>
 </html>
+
 
 
 
