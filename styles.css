@@ -21,20 +21,20 @@ p { margin: 0.6rem 0; }
 a { color: #0366d6; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-/* Container aligned left with minimal margin */
+/* Container aligned left with adjusted margins */
 .container {
   max-width: 980px;      /* limit width */
-  margin-left: 10px;     /* small left margin */
+  margin-left: 30px;     /* increased left margin */
   margin-right: 0;       /* no centering */
-  margin-top: 40px;      /* <<< added top margin */
+  margin-top: 40px;      /* top spacing */
   padding-left: 0;
-  padding-right: 30px;   /* breathing room on right */
+  padding-right: 20px;   /* smaller right margin */
 }
 
 /* Layout: photo on left, text on right */
 .about {
   display: grid;
-  grid-template-columns: 400px 1fr; /* bigger photo */
+  grid-template-columns: 400px 1fr;
   gap: 40px;
   align-items: start;
   padding-bottom: 60px;
@@ -72,7 +72,7 @@ a:hover { text-decoration: underline; }
 
 /* Right text column spacing */
 .about-right {
-  padding-right: 20px;
+  padding-right: 10px; /* also shrink padding inside text column */
 }
 
 /* Mobile: stack photo above text */
