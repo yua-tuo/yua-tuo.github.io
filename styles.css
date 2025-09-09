@@ -39,38 +39,38 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 24px 0; }
 /* ---------- Dark mode button (TOP RIGHT, neutral style) ---------- */
 #theme-toggle {
   position: fixed;
-  top: 18px;           /* slightly lower */
-  right: 24px;         /* moved inward */
+  top: 18px;
+  right: 24px;
   z-index: 999;
   border: none;
   background: none;
   cursor: pointer;
   font-size: 20px;
   line-height: 1;
-  color: var(--muted); /* neutral gray */
+  color: var(--muted);
   padding: 6px;
   transition: color 0.2s ease;
 }
 
 #theme-toggle:hover {
-  color: var(--text);  /* highlight on hover */
+  color: var(--text);
 }
 
 /* ---------- Left-anchored container, wider main text ---------- */
 .container {
   max-width: 1200px;    /* wide so main text area is large */
-  margin-left: 30px;    /* small left margin */
+  margin-left: 30px;
   margin-right: 0;
-  margin-top: 40px;     /* top breathing room */
+  margin-top: 40px;
   padding-left: 0;
-  padding-right: 12px;  /* minimal right padding */
+  padding-right: 12px;
 }
 
 /* ---------- Two-column layout (photo + text) ---------- */
 .about {
   display: grid;
-  grid-template-columns: 340px 1fr;  /* smaller photo column -> wider text */
-  gap: 32px;
+  grid-template-columns: 380px 1fr;  /* larger photo column */
+  gap: 34px;                         /* balanced spacing */
   align-items: start;
   padding-bottom: 60px;
 }
@@ -79,7 +79,7 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 24px 0; }
 .about-left { text-align: left; }
 .photo {
   width: 100%;
-  max-width: 340px;
+  max-width: 380px;     /* larger than before (was 340px) */
   height: auto;
   border-radius: 10px;
   box-shadow: var(--shadow);
