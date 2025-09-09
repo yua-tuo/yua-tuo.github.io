@@ -1,1 +1,17 @@
+.about {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 28px;
+  align-items: start;   /* ensures both photo + text align at the top */
+}
 
+/* Push photo in slightly from the page edge */
+.about-left {
+  margin-left: 20px;   /* adjust 20–40px to taste */
+}
+
+.photo {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,.1);
+}
