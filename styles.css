@@ -36,7 +36,7 @@ a  { color: var(--link); text-decoration: none; }
 a:hover { text-decoration: underline; }
 hr { border: 0; border-top: 1px solid var(--rule); margin: 24px 0; }
 
-/* ---------- Dark mode button (TOP RIGHT, larger & more noticeable) ---------- */
+/* ---------- Dark mode button (TOP RIGHT, larger & neutral) ---------- */
 #theme-toggle {
   position: fixed;
   top: 20px;
@@ -45,16 +45,15 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 24px 0; }
   border: none;
   background: none;
   cursor: pointer;
-  font-size: 28px;      /* larger size (was 20px) */
+  font-size: 28px;      /* larger icon */
   line-height: 1;
   color: var(--muted);  /* neutral gray */
   padding: 8px;
   transition: color 0.2s ease, transform 0.15s ease;
 }
-
 #theme-toggle:hover {
   color: var(--text);
-  transform: scale(1.15); /* subtle zoom on hover */
+  transform: scale(1.15);
 }
 
 /* ---------- Left-anchored container, wider main text ---------- */
@@ -64,13 +63,13 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 24px 0; }
   margin-right: 0;
   margin-top: 40px;
   padding-left: 0;
-  padding-right: 12px;
+  padding-right: 12px;  /* minimal right padding */
 }
 
 /* ---------- Two-column layout (photo + text) ---------- */
 .about {
   display: grid;
-  grid-template-columns: 440px 1fr;  /* large photo column */
+  grid-template-columns: 440px 1fr;  /* large photo column; text remains wide */
   gap: 36px;
   align-items: start;
   padding-bottom: 60px;
@@ -80,7 +79,7 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 24px 0; }
 .about-left { text-align: left; }
 .photo {
   width: 100%;
-  max-width: 440px;
+  max-width: 440px;     /* larger photo */
   height: auto;
   border-radius: 10px;
   box-shadow: var(--shadow);
@@ -97,16 +96,19 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 24px 0; }
 /* Subtitle style (Job Market Paper, etc.) */
 .subtitle { color: var(--muted); margin-top: -6px; }
 
-/* Teaching section formatting */
+/* Teaching section helpers */
 .teaching { font-size: 14px; }
 .teaching .spacer { display: block; height: 4px; }
 .teaching .mini-gap { margin-top: 4px; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
-  .container { margin-left: 20px; padding-right: 10px; }
+  .container {
+    margin-left: 20px;
+    padding-right: 10px;
+    margin-top: 70px;   /* extra top space so the moon button doesn’t touch photo */
+  }
   .about { grid-template-columns: 1fr; gap: 22px; }
   .photo { max-width: 340px; }
   .about-right { padding-right: 0; }
 }
-
