@@ -113,3 +113,13 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 24px 0; }
   .about-right { padding-right: 0; }
 }
 
+#theme-toggle {
+  font-size: 1.2rem;              /* Resize if needed */
+  filter: grayscale(100%) brightness(0.6);  /* Makes emoji gray */
+  background: none;               /* Remove background */
+  border: none;                   /* Remove border */
+  cursor: pointer;                /* Cursor changes on hover */
+  padding: 0.5em;
+}
+
+
